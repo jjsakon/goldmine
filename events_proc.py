@@ -22,12 +22,16 @@ from collections import OrderedDict as od
 import numpy as np
 import pandas as pd
 
-sys.path.append("/home1/dscho/code/general")
+sys.path.append('/home1/john/Goldmine/general')
+sys.path.append('/home1/john/Goldmine/time_cells_goldmine')
+# sys.path.append("/home1/dscho/code/general")
+# sys.path.append("/home1/dscho/code/projects")
+
 import data_io as dio
+# from time_cells import events_preproc
+import events_preproc
 
-sys.path.append("/home1/dscho/code/projects")
-from time_cells import events_preproc
-
+maze_dir = '/data7/goldmine/'
 
 class Events(object):
     """Analyze the Goldmine behavioral log."""
@@ -936,7 +940,7 @@ class Maze(object):
         self.maze_name = maze_name
         self.proj_dir = proj_dir
         self.maze = dio.open_pickle(
-            op.join(proj_dir, "unity", "maps", "{}.pkl".format(maze_name))
+            op.join(maze_dir, "unity", "maps", "{}.pkl".format(maze_name)) # JS
         )
         self.maze.reset_index(drop=True, inplace=True)
         coords = np.array(self.maze["coords"].tolist())

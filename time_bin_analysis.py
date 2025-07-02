@@ -278,7 +278,7 @@ def load_event_spikes(
 
     if op.exists(filename) and not overwrite:
         if verbose:
-            print("Loading saved EventSpikes file")
+            print("Loading saved EventSpikes for "+subj_sess)
         event_spikes = dio.open_pickle(filename)
     else:
         if verbose:
@@ -1778,6 +1778,7 @@ def get_ols_nav_mods(
     Xy, Xycols, formulas, param_map = formula_func(neuron, _event_spikes)
     ols_mods = od([])
     for mod, formula in formulas.items():
+        import ipdb; ipdb.set_trace()
         ols_mods[mod] = ols(formula, data=Xy)
 
     warnings.resetwarnings()

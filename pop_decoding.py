@@ -31,11 +31,16 @@ from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
 from sklearn.svm import SVC
 from sklearn.model_selection import KFold, GridSearchCV, RandomizedSearchCV
 
-sys.path.append("/home1/dscho/code/general")
-import data_io as dio
 
+# sys.path.append('/home1/john/Goldmine/general')
+# sys.path.append('/home1/john/Goldmine/general/cluster_helper')
+# sys.path.append('/home1/john/Goldmine/time_cells_goldmine')
+
+sys.path.append("/home1/dscho/code/general")
 sys.path.append("/home1/dscho/code/projects")
-from time_cells import spike_preproc, events_proc, time_bin_analysis
+
+import data_io as dio
+import spike_preproc, events_proc, time_bin_analysis
 
 
 class PopSpikes(object):

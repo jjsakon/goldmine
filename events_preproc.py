@@ -29,7 +29,8 @@ import statsmodels.api as sm
 
 # Personal
 sys.path.append('/home1/john/Goldmine/general')
-sys.path.append('/data7/goldmine/')
+sys.path.append('/home1/john/Goldmine/time_cells_goldmine')
+# sys.path.append('/data7/goldmine/')
 import data_io as dio
 import array_operations as aop
 import spike_sorting
@@ -478,7 +479,7 @@ def format_events(
     remove_paused_trials=False,
     overwrite=False,
     save_output=True,
-    proj_dir='/data7/goldmine/',
+    proj_dir='/scratch/john/Goldmine_scratch',
     verbose=True,
 ):
     """Format Goldmine events for a testing session.
